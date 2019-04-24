@@ -26,7 +26,7 @@ const initGit = async () => {
               emoji.init
             } Initialize Project With Git and GitHub using GitMo-Cli`
           )
-          .addRemote("origin", credentials.url)
+          // .addRemote("origin", credentials.url)
           .push("origin", "master");
       } catch (error) {
         console.log(chalk.red(error));
