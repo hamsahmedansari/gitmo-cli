@@ -3,9 +3,6 @@ const shell = require("shelljs");
 const chalk = require("chalk");
 
 const GitUpdate = async msg => {
-  console.log("====================================");
-  console.log(msg);
-  console.log("====================================");
   debugger;
   const code = String(shell.exec("git status", { silent: true }).stdout).trim();
   const ModifiedFiles = getModifiedFiles(code);
@@ -19,14 +16,14 @@ const GitUpdate = async msg => {
     await shell.exec("git add *");
     console.log(chalk.greenBright("All Files Added "));
     console.log(chalk.yellowBright("adding Update commit to your repo"));
-    await shell.exec(`git commit -m "Update: ${emoji.update} ${msg} "`);
-    console.log(chalk.greenBright("commit is added!!! "));
 
+    let commitMsg = createCommit(msg, ModifiedFiles, UntrackedFiles);
+
+    await shell.exec(`git commit -m "Update: ${emoji.update} ${commitMsg} "`);
+    console.log(chalk.greenBright("commit is added!!! "));
     if (isRemoteExist()) {
       console.log(chalk.yellowBright("Pushing to master "));
-
       await shell.exec(`git push`);
-
       console.log(chalk.bgBlueBright("Remote is Updated"));
       console.log(chalk.blueBright(credentials.url));
     }
@@ -92,6 +89,22 @@ const isRemoteExist = async () => {
   ).trim();
   if (code.length) return code;
   return false;
+};
+const createCommit = (commitMsg, trackedFiles, untrackeedFiles) => {
+  let msg = commitMsg;
+  if (trackedFiles.length) {
+    msg += `\n ${trackedFiles.length} is Modified :`;
+    trackedFiles.map((file, i) => {
+      msg += `\n ${i + 1} : ${file}`;
+    });
+  }
+  if (untrackeedFiles.length) {
+    msg += `\n ${untrackeedFiles.length} is Modified :`;
+    untrackeedFiles.map((file, i) => {
+      msg += `\n ${i + 1} : ${file}`;
+    });
+  }
+  return msg;
 };
 module.exports = GitUpdate;
 // testing commit
