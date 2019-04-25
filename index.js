@@ -10,6 +10,7 @@ const help = require("./util/help");
 const init = require("./util/init");
 const update = require("./util/update");
 const remove = require("./util/remove");
+const fixed = require("./util/fixed");
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -48,6 +49,11 @@ if ("h" in command) {
   }
 } else if (helperCommand.fixed in command) {
   // add all file as FIXED and push
+  if (command[helperCommand.fixed].length) {
+    fixed(command[helperCommand.fixed]);
+  } else {
+    console.log(chalk.redBright("Commit is not exist"));
+  }
 } else if (helperCommand.readme in command) {
   // add readme.md file as FIXED and push
 } else if (helperCommand.deploy in command) {

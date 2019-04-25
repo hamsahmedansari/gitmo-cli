@@ -1,5 +1,6 @@
 module.exports = {
   init: ":tada:",
   update: ":construction:",
-  remove: ":fire:"
+  remove: ":fire:",
+  fixed: ":bug:"
 };
