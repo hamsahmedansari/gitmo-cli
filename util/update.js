@@ -18,7 +18,9 @@ const GitUpdate = async msg => {
     await shell.exec("git add *");
     console.log(chalk.greenBright("All Files Added "));
     console.log(chalk.yellowBright("adding Update commit to your repo"));
-    let commitMsg = helper.createCommit(msg);
+
+    let commitMsg = helper.createCommit(msg, ModifiedFiles, UntrackedFiles);
+
     await shell.exec(`git commit -m "Update: ${emoji.update} ${commitMsg} "`);
     console.log(chalk.greenBright("commit is added!!! "));
     if (helper.isRemoteExist()) {
