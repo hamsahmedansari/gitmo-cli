@@ -4,10 +4,17 @@ const yargs = require("yargs");
 const command = yargs.argv;
 const { _ } = command;
 // const inquirer = require("inquirer");
+const shell = require("shelljs");
+const chalk = require("chalk");
 
 const help = require("./util/help");
 const init = require("./util/init");
 const helperCommand = require("./util/command");
+
+if (!shell.which("git")) {
+  shell.echo(chalk.red("Sorry, this script requires git"));
+  shell.exit(1);
+}
 
 // Start Code Here
 // console.log("====================================");
