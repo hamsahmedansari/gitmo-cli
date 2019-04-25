@@ -56,6 +56,7 @@ const create = () => {
 
   // log.table("-a || -A", "It will selected file", "i.e -a index.html");
   console.groupEnd();
+  process.exit();
 };
 
 module.exports = create;

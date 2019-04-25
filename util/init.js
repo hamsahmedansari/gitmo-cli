@@ -14,48 +14,48 @@ const initGit = async () => {
   );
   const credentials = await inquirer.GithubCredentials();
   if (credentials) {
-    if (true) {
-      try {
-        await files.createGitignore();
-        await files.createReadme();
+    try {
+      await files.createGitignore();
+      await files.createReadme();
 
-        if ((await shell.exec("git init").code) !== 0) {
-          shell.echo(chalk.red("Error: Git commit failed"));
-          shell.exit(1);
-        }
+      if ((await shell.exec("git init").code) !== 0) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
 
-        console.log(chalk.greenBright("Git is Initialized"));
-        console.log(chalk.yellowBright("Adding All File in to your git"));
+      console.log(chalk.greenBright("Git is Initialized"));
+      console.log(chalk.yellowBright("Adding All File in to your git"));
 
-        if ((await shell.exec("git add *").code) !== 0) {
-          shell.echo(chalk.red("Error: Git commit failed"));
-          shell.exit(1);
-        }
+      if ((await shell.exec("git add *").code) !== 0) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
 
-        console.log(chalk.greenBright("All Files Added "));
-        console.log(chalk.yellowBright("Adding .gitignore file"));
+      console.log(chalk.greenBright("All Files Added "));
+      console.log(chalk.yellowBright("Adding .gitignore file"));
 
-        if ((await shell.exec("git add .gitignore").code) !== 0) {
-          shell.echo(chalk.red("Error: Git commit failed"));
-          shell.exit(1);
-        }
+      if ((await shell.exec("git add .gitignore").code) !== 0) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
 
-        console.log(chalk.greenBright(".gitignore is added "));
-        console.log(chalk.yellowBright("adding INIT commit to your repo"));
+      console.log(chalk.greenBright(".gitignore is added "));
+      console.log(chalk.yellowBright("adding INIT commit to your repo"));
 
-        if (
-          (await shell.exec(
-            `git commit -m "Initial: ${
-              emoji.init
-            } Initialize Project With Git and GitHub using GitMo-Cli"`
-          ).code) !== 0
-        ) {
-          shell.echo(chalk.red("Error: Git commit failed"));
-          shell.exit(1);
-        }
-        console.log(chalk.greenBright("commit is added!!! "));
-        console.log(chalk.yellowBright("adding remote master origin "));
+      if (
+        (await shell.exec(
+          `git commit -m "Initial: ${
+            emoji.init
+          } Initialize Project With Git and GitHub using GitMo-Cli "`
+        ).code) !== 0
+      ) {
+        shell.echo(chalk.red("Error: Git commit failed"));
+        shell.exit(1);
+      }
+      console.log(chalk.greenBright("commit is added!!! "));
+      console.log(chalk.yellowBright("adding remote master origin "));
 
+      if (true) {
         if (
           (await shell.exec(`git remote add origin ${credentials.url}`)
             .code) !== 0
@@ -71,9 +71,14 @@ const initGit = async () => {
           shell.echo(chalk.red("Error: Git commit failed"));
           shell.exit(1);
         }
-      } catch (error) {
-        console.log(chalk.red(error));
+
+        console.log(chalk.bgBlueBright("Remote is Updated"));
+        console.log(chalk.blueBright(credentials.url));
       }
+      console.log(chalk.bgBlueBright("Your current Dir is now Gir Repo"));
+      process.exit();
+    } catch (error) {
+      console.log(chalk.red(error));
     }
   }
 };

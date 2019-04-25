@@ -3,12 +3,12 @@
 const yargs = require("yargs");
 const command = yargs.argv;
 const { _ } = command;
-// const inquirer = require("inquirer");
 const shell = require("shelljs");
 const chalk = require("chalk");
 
 const help = require("./util/help");
 const init = require("./util/init");
+const update = require("./util/update");
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -33,6 +33,7 @@ if ("h" in command) {
   init();
 } else if (helperCommand.update in command) {
   // add all file as UPDATE and push
+  update();
 } else if (helperCommand.remove in command) {
   // remove selected file from git and push
 } else if (helperCommand.fixed in command) {
@@ -49,5 +50,5 @@ if ("h" in command) {
   // It will add package.json file to your git and github with emoji
 } else {
   // show help
-  // help();
+  help();
 }
