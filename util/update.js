@@ -17,15 +17,13 @@ const getModifiedFiles = () => {
     `Untracked files:`
   ];
   const indexOf = [gitCode.indexOf(tempArr[0]), gitCode.indexOf(tempArr[1])];
-  return (
-    gitCode.indexOf(tempArr[0]) &&
-    String(gitCode.slice(indexOf[0] + tempArr[0].length, indexOf[1]))
-      .replace(/modified:/g, "")
-      .replace(/\t/g, "")
-      .replace(/ /g, "")
-      .trim()
-      .split("\n")
-  );
+  if (!gitCode.indexOf("modified")) return false;
+  return String(gitCode.slice(indexOf[0] + tempArr[0].length, indexOf[1]))
+    .replace(/modified:/g, "")
+    .replace(/\t/g, "")
+    .replace(/ /g, "")
+    .trim()
+    .split("\n");
 };
 
 module.exports = GitUpdate;
