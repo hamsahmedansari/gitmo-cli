@@ -23,8 +23,6 @@ const GitUpdate = async msg => {
     await shell.exec(`git commit -m "Update: ${emoji.update} ${msg} "`);
 
     // ) {
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
     // }
     console.log(chalk.greenBright("commit is added!!! "));
 
