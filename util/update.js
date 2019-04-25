@@ -7,23 +7,19 @@ const GitUpdate = async msg => {
   console.log(msg);
   console.log("====================================");
   debugger;
-  //   const code = String(shell.exec("git status", { silent: true }).stdout).trim();
-  //   const ModifiedFiles = getModifiedFiles(code);
-  //   const UntrackedFiles = getUntrackedFiles(code);
-  //   if (!ModifiedFiles && !UntrackedFiles) {
-  //     console.log(chalk.redBright("There is noting to commit."));
-  //     process.exit();
-  //   }
+  const code = String(shell.exec("git status", { silent: true }).stdout).trim();
+  const ModifiedFiles = getModifiedFiles(code);
+  const UntrackedFiles = getUntrackedFiles(code);
+  if (!ModifiedFiles && !UntrackedFiles) {
+    console.log(chalk.redBright("There is noting to commit."));
+    process.exit();
+  }
   try {
     console.log(chalk.yellowBright("Adding All File in to your git"));
     await shell.exec("git add *");
     console.log(chalk.greenBright("All Files Added "));
     console.log(chalk.yellowBright("adding Update commit to your repo"));
-    // if (
     await shell.exec(`git commit -m "Update: ${emoji.update} ${msg} "`);
-
-    // ) {
-    // }
     console.log(chalk.greenBright("commit is added!!! "));
 
     if (isRemoteExist()) {
@@ -38,7 +34,7 @@ const GitUpdate = async msg => {
     console.log(chalk.bgBlueBright("Your current Dir is now Gir Repo"));
     process.exit();
   } catch (error) {
-    console.log(chalk.red(error, "i am from error"));
+    process.exit();
   }
 };
 
