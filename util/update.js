@@ -28,7 +28,7 @@ const GitUpdate = async msg => {
     console.log(chalk.greenBright("commit is added!!! "));
 
     if (isRemoteExist()) {
-      console.log(chalk.yellowBright("adding remote master origin "));
+      console.log(chalk.yellowBright("adding remote master origin"));
       console.log(chalk.yellowBright("Pushing to master "));
 
       if ((await shell.exec(`git push`).code) !== 0) {
