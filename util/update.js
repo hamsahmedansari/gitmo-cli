@@ -4,9 +4,13 @@ const chalk = require("chalk");
 
 const GitUpdate = async () => {
   const code = String(shell.exec("git status", { silent: true }).stdout).trim();
+  const ModifiedFiles = getModifiedFiles(code);
+  const UntrackedFiles = getUntrackedFiles(code);
+  if (!ModifiedFiles && !UntrackedFiles) {
+    process.exit();
+  }
   console.log("====================================");
-  console.log(getModifiedFiles(code));
-  console.log(getUntrackedFiles(code));
+  console.log("worrking great");
   console.log("====================================");
 };
 
