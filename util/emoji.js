@@ -1,3 +1,4 @@
 module.exports = {
-  init: ":tada:"
+  init: ":tada:",
+  update: ":construction:"
 };
