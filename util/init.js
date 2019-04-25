@@ -19,22 +19,16 @@ const initGit = async () => {
     await files.createReadme();
 
     shell.exec("git init");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
 
     console.log(chalk.greenBright("Git is Initialized"));
     console.log(chalk.yellowBright("Adding All File in to your git"));
 
     shell.exec("git add *");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
 
     console.log(chalk.greenBright("All Files Added "));
     console.log(chalk.yellowBright("Adding .gitignore file"));
 
     shell.exec("git add .gitignore");
-    shell.echo(chalk.red("Error: Git commit failed"));
-    shell.exit(1);
 
     console.log(chalk.greenBright(".gitignore is added "));
     console.log(chalk.yellowBright("adding INIT commit to your repo"));

@@ -9,6 +9,7 @@ const chalk = require("chalk");
 const help = require("./util/help");
 const init = require("./util/init");
 const update = require("./util/update");
+const remove = require("./util/remove");
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -40,6 +41,11 @@ if ("h" in command) {
   }
 } else if (helperCommand.remove in command) {
   // remove selected file from git and push
+  if (command[helperCommand.remove].length && _.length) {
+    remove(command[helperCommand.remove], _);
+  } else {
+    console.log(chalk.redBright("Argument is Messing "));
+  }
 } else if (helperCommand.fixed in command) {
   // add all file as FIXED and push
 } else if (helperCommand.readme in command) {
