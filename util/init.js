@@ -58,7 +58,7 @@ const initGit = async () => {
       console.log(chalk.bgBlueBright("Remote is Updated"));
       console.log(chalk.blueBright(credentials.url));
     }
-    console.log(chalk.bgBlueBright("Your current Dir is now Gir Repo"));
+    console.log(chalk.bgGreenBright("Your current Dir is now Gir Repo"));
     process.exit();
   } catch (error) {
     console.log(chalk.red(error));
