@@ -3,7 +3,7 @@ module.exports = {
   update: "u",
   remove: "r",
   fixed: "f",
-  readme: "readme",
+  readme: "R",
   deploy: "d",
   revert: "revert",
   addDependance: "D",
