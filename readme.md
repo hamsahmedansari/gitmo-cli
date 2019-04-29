@@ -31,13 +31,13 @@ Some Feature are list below...
 ## Instalation
 
 ```
-npm i gitmo-cli
+$ npm i -g gitmo-cli
 ```
 
 or
 
 ```
-yarn add gitmo-cli
+$ yarn global  gitmo-cli
 ```
 
 after that you can use Gitmo-Cli by `gitmo [command] [argu]`
@@ -45,13 +45,13 @@ after that you can use Gitmo-Cli by `gitmo [command] [argu]`
 ### Help
 
 ```
-gitmo -h
+$ gitmo -h
 ```
 
 or
 
 ```
-gitmo
+$ gitmo
 ```
 
 ![](https://i.imgur.com/mZmPWhO.png)
@@ -59,7 +59,7 @@ gitmo
 ### Initialized Git Repository
 
 ```
-gitmo -i
+$ gitmo -i
 ```
 
 it ask for your github repo url with .git extension provide it. and it will create repo with readme.md and .gitignore if not exist then push to your remote server.
@@ -68,31 +68,31 @@ it ask for your github repo url with .git extension provide it. and it will crea
 ### Update Git Repository
 
 ```
-gitmo -u [msg]
+$ gitmo -u [msg]
 ```
 
 ### Remove From Git Repository
 
 ```
-gitmo -r [msg] [files]
+$ gitmo -r [msg] [files]
 ```
 
 ### Fixed Git Commit
 
 ```
-gitmo -f [msg]
+$ gitmo -f [msg]
 ```
 
 ### Readme.md Update
 
 ```
-gitmo -R [msg]
+$ gitmo -R [msg]
 ```
 
 ### Deploy Update
 
 ```
-gitmo -d [msg]
+$ gitmo -d [msg]
 ```
 
 ## Create Your own style commit
