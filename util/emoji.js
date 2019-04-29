@@ -3,5 +3,6 @@ module.exports = {
   update: ":construction:",
   remove: ":fire:",
   fixed: ":bug:",
-  readme: ":pencil:"
+  readme: ":pencil:",
+  deploy: ":rocket:"
 };
