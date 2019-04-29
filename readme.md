@@ -119,6 +119,3 @@ You can create your own style commit just edit few files from dir and you can ad
     ├── index.js                        # Starter Point
     ├── package-lock.json
     ├── readme.md
-
-> Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`
