@@ -37,7 +37,7 @@ $ npm i -g gitmo-cli
 or
 
 ```
-$ yarn global  gitmo-cli
+$ yarn global add gitmo-cli
 ```
 
 after that you can use Gitmo-Cli by `gitmo [command] [argu]`
