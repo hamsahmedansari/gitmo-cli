@@ -37,22 +37,22 @@ const create = () => {
     `-${command.deploy} [msg]`,
     "It will add all file as deploy to your git and github with emoji "
   );
-  log.table(
-    `-${command.revert}`,
-    "It will show you list of commit and you can select to revert that "
-  );
   // log.table(
-  //   `-rename [msg]`,
-  //   "It will add all file as rename your git repo to your git and github with emoji "
+  //   `-${command.revert}`,
+  //   "It will show you list of commit and you can select to revert that "
   // );
-  log.table(
-    `-${command.addDependance} [msg]`,
-    "It will add package.json file to your git and github with emoji "
-  );
-  log.table(
-    `-${command.removeDependance} [msg]`,
-    "It will add package.json file to your git and github with emoji "
-  );
+  // // log.table(
+  // //   `-rename [msg]`,
+  // //   "It will add all file as rename your git repo to your git and github with emoji "
+  // // );
+  // log.table(
+  //   `-${command.addDependance} [msg]`,
+  //   "It will add package.json file to your git and github with emoji "
+  // );
+  // log.table(
+  //   `-${command.removeDependance} [msg]`,
+  //   "It will add package.json file to your git and github with emoji "
+  // );
 
   // log.table("-a || -A", "It will selected file", "i.e -a index.html");
   console.groupEnd();

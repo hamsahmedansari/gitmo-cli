@@ -70,12 +70,12 @@ if ("h" in command) {
   } else {
     console.log(chalk.redBright("Commit is not exist"));
   }
-} else if (helperCommand.revert in command) {
-  // It will show you list of commit and you can select to revert that
-} else if (helperCommand.addDependance in command) {
-  // It will add package.json file to your git and github with emoji
-} else if (helperCommand.removeDependance in command) {
-  // It will add package.json file to your git and github with emoji
+  // } else if (helperCommand.revert in command) {
+  //   // It will show you list of commit and you can select to revert that
+  // } else if (helperCommand.addDependance in command) {
+  //   // It will add package.json file to your git and github with emoji
+  // } else if (helperCommand.removeDependance in command) {
+  //   // It will add package.json file to your git and github with emoji
 } else {
   // show help
   help();
