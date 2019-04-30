@@ -57,7 +57,7 @@ or
 $ gitmo
 ```
 
-![](https://i.imgur.com/mZmPWhO.png)
+![](https://i.imgur.com/bOzN7m5.png)
 
 ### Initialized Git Repository
 
