@@ -8,5 +8,5 @@ module.exports = {
   revert: "revert",
   addDependance: "D",
   removeDependance: "R",
-  improveStructure: 'F'
+  improveStructure: "z"
 };
