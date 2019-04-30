@@ -13,6 +13,7 @@ const remove = require("./util/remove");
 const fixed = require("./util/fixed");
 const deploy = require("./util/deploy");
 const readme = require("./util/readme");
+const format = require("./util/format")
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -67,7 +68,13 @@ if ("h" in command) {
   // add d file as FIXED and
   if (command[helperCommand.deploy].length) {
     deploy(command[helperCommand.deploy]);
-  } else {
+  } else if(helperCommand.improveStructure in command){
+    // improver file structure
+    if (command[helperCommand.improveStructure].length) {
+     format(command[helperCommand.improveStructure]) 
+    }
+  }
+   else {
     console.log(chalk.redBright("Commit is not exist"));
   }
   // } else if (helperCommand.revert in command) {

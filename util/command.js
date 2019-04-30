@@ -7,5 +7,6 @@ module.exports = {
   deploy: "d",
   revert: "revert",
   addDependance: "D",
-  removeDependance: "R"
+  removeDependance: "R",
+  improveStructure: 'F'
 };
