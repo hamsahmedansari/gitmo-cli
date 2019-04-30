@@ -1,6 +1,6 @@
 {
   "name": "gitmo-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An simple CLI for GitHub with an extra texture of emoji which look so cool and add more attractive commit to your git",
   "main": "index.js",
   "scripts": {
