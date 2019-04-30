@@ -4,5 +4,6 @@ module.exports = {
   remove: ":fire:",
   fixed: ":bug:",
   readme: ":pencil:",
-  deploy: ":rocket:"
+  deploy: ":rocket:",
+  format: ":art:"
 };
