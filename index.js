@@ -78,7 +78,7 @@ if ("h" in command) {
   // } else if (helperCommand.removeDependance in command) {
   //   // It will add package.json file to your git and github with emoji
 } else if(helperCommand.improveStructure in command){
-  // improve file structure commit
+  // improve file structure commit test
   if (command[helperCommand.improveStructure].length) {
    format(command[helperCommand.improveStructure]) 
   }
