@@ -27,6 +27,9 @@ Some Feature are list below...
    - Add Beautiful Git Commit as Readme.Update with Special **EMOJI**.
 6. Deploy Git Commit - Add All files to your git.
    - Add Beautiful Git Commit as **Deploy** with Special **EMOJI** and add track files as commit description
+7. Folder Structure Commit
+   - Add all files to your git.
+   - Add Beautiful Git Commit as **Structure** with Special **EMOJI** and add track files as commit description
 
 ## Instalation
 
@@ -95,6 +98,12 @@ $ gitmo -R [msg]
 $ gitmo -d [msg]
 ```
 
+### Structure Update Commit
+
+```
+$ gitmo -z [msg]
+```
+
 ## Create Your own style commit
 
 You can create your own style commit just edit few files from dir and you can add your own style commit with just one command
@@ -111,9 +120,10 @@ You can create your own style commit just edit few files from dir and you can ad
         ├── help.js                     # Show Help on Shell
         ├── init.js                     # Init Commit and push to server
         ├── log.js                      # Log helper File
-        ├── readme.js                   # Readme Commit and push to server
-        ├── remove.js                   # Remove Commit and push to server
-        ├── update.js                   # Update Commit and push to server
+        ├── readme.js                   # Handle Readme Commit and push to the server
+        ├── remove.js                   # Handle Remove Commit and push to the server
+        ├── update.js                   # Handle Update Commit and push to the server
+        ├── format.js                   # Handle Format Commit and push to the server
         └── emoji.js                    # All Emoji lives here
 
     ├── index.js                        # Starter Point

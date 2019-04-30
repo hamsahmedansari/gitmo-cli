@@ -13,7 +13,7 @@ const remove = require("./util/remove");
 const fixed = require("./util/fixed");
 const deploy = require("./util/deploy");
 const readme = require("./util/readme");
-const format = require("./util/format")
+const format = require("./util/format");
 const helperCommand = require("./util/command");
 
 if (!shell.which("git")) {
@@ -77,10 +77,12 @@ if ("h" in command) {
   //   // It will add package.json file to your git and github with emoji
   // } else if (helperCommand.removeDependance in command) {
   //   // It will add package.json file to your git and github with emoji
-} else if(helperCommand.improveStructure in command){
+} else if (helperCommand.improveStructure in command) {
   // improve file structure commit test
   if (command[helperCommand.improveStructure].length) {
-   format(command[helperCommand.improveStructure]) 
+    format(command[helperCommand.improveStructure]);
+  } else {
+    console.log(chalk.redBright("Commit is not exist"));
   }
 } else {
   // show help

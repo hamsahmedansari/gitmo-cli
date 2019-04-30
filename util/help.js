@@ -37,6 +37,10 @@ const create = () => {
     `-${command.deploy} [msg]`,
     "It will add all file as deploy to your git and github with emoji "
   );
+  log.table(
+    `-${command.improveStructure} [msg]`,
+    "It will add all file as New Structure Folder to your git and github with emoji "
+  );
   // log.table(
   //   `-${command.revert}`,
   //   "It will show you list of commit and you can select to revert that "
